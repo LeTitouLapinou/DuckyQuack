@@ -50,7 +50,6 @@ public class Elevator : MonoBehaviour
                 }
             }
         }
-
     }
     private void OnTriggerEnter(Collider other)
     {
