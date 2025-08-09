@@ -5,20 +5,22 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class GPI_Cacheur : MonoBehaviour, IPeckable
 {
-    [SerializeField, Required] private GameObject collectiblePrefab;
 
     [SerializeField, Required] private Mesh mesh;
     public int ducklingNumber;
 
     //[SerializeField, Required] private SO_EventManager eventManager;
 
-    [FoldoutGroup("References", nameof(meshFilter), nameof(meshRenderer), nameof(initialMaterial), nameof(swappedMaterial))]
+    [FoldoutGroup("References", nameof(collectiblePrefab), nameof(meshFilter), nameof(meshRenderer), nameof(initialMaterial), nameof(swappedMaterial))]
     [SerializeField] private Void groupHolder;
+    [SerializeField, HideProperty] private GameObject collectiblePrefab;
     [SerializeField, HideProperty] private MeshFilter meshFilter;
     [SerializeField, HideProperty] private MeshRenderer meshRenderer;
     [Space(10)]
     [SerializeField, HideProperty] private Material initialMaterial;
     [SerializeField, HideProperty] private Material swappedMaterial;
+
+    private bool canBePicked = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,15 +28,16 @@ public class GPI_Cacheur : MonoBehaviour, IPeckable
         
     }
 
-    [Button("Spawn ducklings")]
     private void StartCoroutineDuck()
     {
+        canBePicked = false;
         StartCoroutine("SpawnDucklings");
         meshRenderer.material = swappedMaterial;
     }
 
     IEnumerator SpawnDucklings()
     {
+
         for (int i = 0; i < ducklingNumber; i++)
         {
             GameObject duckling = Instantiate(collectiblePrefab, transform.position, transform.rotation);
@@ -42,6 +45,7 @@ public class GPI_Cacheur : MonoBehaviour, IPeckable
             duckling.GetComponent<Rigidbody>()?.AddForce(randomTilt * 300f);
             yield return new WaitForSeconds(.1f);
         }
+        
     }
 
     [Button("Update mesh")]
@@ -52,6 +56,7 @@ public class GPI_Cacheur : MonoBehaviour, IPeckable
 
     public void OnPeck()
     {
-        StartCoroutineDuck();
+        if (canBePicked)
+            StartCoroutineDuck();
     }
 }
