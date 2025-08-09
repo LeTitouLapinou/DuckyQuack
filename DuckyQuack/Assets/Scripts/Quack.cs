@@ -13,17 +13,14 @@ public class Quack : MonoBehaviour
             audioSource = gameObject.AddComponent<AudioSource>();
         }
 
-        audioSource.clip = quackSound;
+        audioSource.playOnAwake = false;
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))  // 1 = clic droit (0 = clic gauche)
+        if (Input.GetMouseButtonDown(1))  // 1 = clic droit
         {
-            if (!audioSource.isPlaying)
-            {
-                audioSource.Play();
-            }
+            audioSource.PlayOneShot(quackSound);
         }
     }
 }
