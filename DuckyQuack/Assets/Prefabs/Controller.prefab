@@ -161,7 +161,7 @@ MonoBehaviour:
   AirAccelerationSpeed: 20
   Drag: 0
   AllowJumpingWhenSliding: 1
-  JumpUpSpeed: 10
+  JumpUpSpeed: 7
   JumpScalableForwardSpeed: 0
   JumpPreGroundingGraceTime: 0.1
   JumpPostGroundingGraceTime: 0.1
@@ -647,7 +647,7 @@ MonoBehaviour:
   ObstructionCheckRadius: 0.2
   ObstructionLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 247
   ObstructionSharpness: 10000
   IgnoredColliders: []
 --- !u!114 &6163164204980336027
