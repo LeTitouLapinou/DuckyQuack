@@ -50,17 +50,5 @@ public class Elevator : MonoBehaviour
                 }
             }
         }
-
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        duckOnElevator = true;
-    }
-
-
-    private void OnTriggerExit(Collider other)
-    {
-       duckOnElevator = false;
-    }
-
 }
