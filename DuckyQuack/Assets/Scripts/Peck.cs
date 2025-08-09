@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Pick : MonoBehaviour
+public class Peck : MonoBehaviour, IPeckable
 {
     public float radius;
 
@@ -15,7 +15,7 @@ public class Pick : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0)) // Clic gauche
         {
             Cast();
         }
@@ -30,7 +30,6 @@ public class Pick : MonoBehaviour
                             + transform.right * offsetX
                             + transform.up * offsetY
                             + transform.forward * offsetZ;
-
         Gizmos.DrawSphere(spherePos, radius);
     }
 
@@ -40,9 +39,12 @@ public class Pick : MonoBehaviour
                          + transform.right * offsetX
                          + transform.up * offsetY
                          + transform.forward * offsetZ;
-
-        // Direction du SphereCast : vers le bas local (tu peux modifier si besoin)
         Vector3 direction = -transform.up;
 
+    }
+
+    void IPeckable.OnPeck()
+    {
+        //tofill
     }
 }
