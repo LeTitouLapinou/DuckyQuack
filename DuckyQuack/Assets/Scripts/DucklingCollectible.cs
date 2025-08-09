@@ -1,5 +1,6 @@
 using System.Collections;
 using EditorAttributes;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DucklingCollectible : MonoBehaviour
@@ -18,6 +19,7 @@ public class DucklingCollectible : MonoBehaviour
     public void OnPickup()
     {
         eventManager.DucklingPickedUp.Invoke(SO_duckling);
+        eventManager.DispatchDucklingPickup.Invoke(); // Event de ramassage de duckling pour UI
         Destroy(gameObject);
     }
 
