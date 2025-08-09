@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 2232874561051430234}
   - component: {fileID: 1353184608006811567}
   - component: {fileID: 2311036694998583803}
+  - component: {fileID: 6400127397900082232}
   m_Layer: 6
   m_Name: Duck
   m_TagString: Untagged
@@ -174,6 +175,7 @@ MonoBehaviour:
   MeshRoot: {fileID: 4173940203277777250}
   CameraFollowPoint: {fileID: 2537291751384408491}
   CrouchedCapsuleHeight: 1
+  animator: {fileID: 6400127397900082232}
 --- !u!114 &7331388926174421399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,6 +278,28 @@ MonoBehaviour:
   layermask:
     serializedVersion: 2
     m_Bits: 512
+--- !u!95 &6400127397900082232
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2429120949438729779}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 16a20ae01a77afa4a83f1d291e9b3ffc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2938718143952910147
 GameObject:
   m_ObjectHideFlags: 0

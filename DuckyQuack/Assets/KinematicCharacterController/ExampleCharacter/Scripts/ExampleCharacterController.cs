@@ -71,6 +71,8 @@ namespace KinematicCharacterController.Examples
         public Transform CameraFollowPoint;
         public float CrouchedCapsuleHeight = 1f;
 
+        public Animator animator;
+
         public CharacterState CurrentCharacterState { get; private set; }
 
         private Collider[] _probedColliders = new Collider[8];
@@ -289,6 +291,8 @@ namespace KinematicCharacterController.Examples
                         {
                             float currentVelocityMagnitude = currentVelocity.magnitude;
 
+                            animator.SetFloat("Blend", currentVelocityMagnitude);
+
                             Vector3 effectiveGroundNormal = Motor.GroundingStatus.GroundNormal;
 
                             // Reorient velocity on slope
@@ -305,6 +309,8 @@ namespace KinematicCharacterController.Examples
                         // Air movement
                         else
                         {
+                            animator.SetFloat("Blend", 0);
+
                             // Add move input
                             if (_moveInputVector.sqrMagnitude > 0f)
                             {

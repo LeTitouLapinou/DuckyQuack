@@ -11,11 +11,12 @@ public class GPI_Cacheur : MonoBehaviour, IPeckable
 
     //[SerializeField, Required] private SO_EventManager eventManager;
 
-    [FoldoutGroup("References", nameof(collectiblePrefab), nameof(meshFilter), nameof(meshRenderer), nameof(initialMaterial), nameof(swappedMaterial))]
+    [FoldoutGroup("References", nameof(collectiblePrefab), nameof(meshFilter), nameof(meshRenderer), nameof(meshCollider), nameof(initialMaterial), nameof(swappedMaterial))]
     [SerializeField] private Void groupHolder;
     [SerializeField, HideProperty] private GameObject collectiblePrefab;
     [SerializeField, HideProperty] private MeshFilter meshFilter;
     [SerializeField, HideProperty] private MeshRenderer meshRenderer;
+    [SerializeField, HideProperty] private MeshCollider meshCollider;
     [Space(10)]
     [SerializeField, HideProperty] private Material initialMaterial;
     [SerializeField, HideProperty] private Material swappedMaterial;
@@ -52,6 +53,7 @@ public class GPI_Cacheur : MonoBehaviour, IPeckable
     private void UpdateMesh()
     {
         meshFilter.mesh = mesh;
+        meshCollider.sharedMesh = mesh;
     }
 
     public void OnPeck()
