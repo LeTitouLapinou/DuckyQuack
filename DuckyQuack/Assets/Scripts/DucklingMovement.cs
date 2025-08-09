@@ -4,9 +4,9 @@ public class DucklingMovement : MonoBehaviour
 {
     public Transform follow;
 
-    public float maxDistance = 2;
+    public float maxDistance = 1f;
 
-    public float speed = 1.0f;
+    public float speed = 10f;
 
     // Update is called once per frame
     void Update()
