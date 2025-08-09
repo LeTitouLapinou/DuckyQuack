@@ -3,7 +3,6 @@ using UnityEngine;
 public class Pick : MonoBehaviour
 {
     public float radius;
-    public float maxDistance;
 
     [Header("Offsets locaux")]
     public float offsetX;  
@@ -45,9 +44,5 @@ public class Pick : MonoBehaviour
         // Direction du SphereCast : vers le bas local (tu peux modifier si besoin)
         Vector3 direction = -transform.up;
 
-        if (Physics.SphereCast(origin, radius, direction, out hit, maxDistance, layermask))
-        {
-            Debug.Log(hit.collider.gameObject);
-        }
     }
 }

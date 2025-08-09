@@ -268,11 +268,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9503b30cb8e08b4da78aca6a8f9610b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.53
-  maxDistance: -0.81
-  offsetX: -0.01
-  offsetY: 0.67
-  offsetZ: 0.7
+  radius: 0.6
+  offsetX: 0
+  offsetY: 0.75
+  offsetZ: 0.6
   layermask:
     serializedVersion: 2
     m_Bits: 4294967295
