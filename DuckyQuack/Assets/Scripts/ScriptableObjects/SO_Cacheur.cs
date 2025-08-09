@@ -6,8 +6,8 @@ public class SO_Cacheur : ScriptableObject
 {
     public Mesh mesh;
 
-    public Material initialMaterial;
-    public Material swappedMaterial;
+    //public Material initialMaterial;
+    //public Material swappedMaterial;
 
     [Title("Number of ducklings")]
     public int ducklingNumber;
