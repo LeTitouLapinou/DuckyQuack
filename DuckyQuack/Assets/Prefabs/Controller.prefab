@@ -151,12 +151,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Motor: {fileID: 7331388926174421399}
-  MaxStableMoveSpeed: 10
+  MaxStableMoveSpeed: 5
   StableMovementSharpness: 15
   OrientationSharpness: 20
   OrientationMethod: 1
-  MaxAirMoveSpeed: 10
-  AirAccelerationSpeed: 30
+  MaxAirMoveSpeed: 5
+  AirAccelerationSpeed: 20
   Drag: 0
   AllowJumpingWhenSliding: 1
   JumpUpSpeed: 10
@@ -546,9 +546,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Camera: {fileID: 8880189328457336257}
-  FollowPointFraming: {x: 0, y: 0}
+  FollowPointFraming: {x: 0, y: 0.6}
   FollowingSharpness: 1e+9
-  DefaultDistance: 6
+  DefaultDistance: 3
   MinDistance: 0
   MaxDistance: 10
   DistanceMovementSpeed: 5
