@@ -1,10 +1,12 @@
+using System.Collections;
 using EditorAttributes;
 using UnityEngine;
 
 [ExecuteInEditMode]
 public class GPI_Cacheur : MonoBehaviour
 {
-    
+    [SerializeField, Required] private GameObject collectiblePrefab;
+
     [SerializeField, Required] private Mesh mesh;
     public int ducklingNumber;
 
@@ -24,6 +26,23 @@ public class GPI_Cacheur : MonoBehaviour
         
     }
 
+    [Button("Spawn ducklings")]
+    private void StartCoroutineDuck()
+    {
+        StartCoroutine("SpawnDucklings");
+        meshRenderer.material = swappedMaterial;
+    }
+
+    IEnumerator SpawnDucklings()
+    {
+        for (int i = 0; i < ducklingNumber; i++)
+        {
+            GameObject duckling = Instantiate(collectiblePrefab, transform.position, transform.rotation);
+            Vector3 randomTilt = (Vector3.up + Random.insideUnitSphere * 0.8f).normalized;
+            duckling.GetComponent<Rigidbody>()?.AddForce(randomTilt * 300f);
+            yield return new WaitForSeconds(.1f);
+        }
+    }
 
     [Button("Update mesh")]
     private void UpdateMesh()

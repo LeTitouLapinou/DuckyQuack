@@ -10,6 +10,7 @@ public class DucklingCollectible : MonoBehaviour
     public void OnPickup()
     {
         eventManager.DucklingPickedUp.Invoke(SO_duckling);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter(UnityEngine.Collider other)
