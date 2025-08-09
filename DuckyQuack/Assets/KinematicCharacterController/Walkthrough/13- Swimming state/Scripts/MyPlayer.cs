@@ -68,11 +68,7 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
             // Apply inputs to the camera
             OrbitCamera.UpdateWithInput(Time.deltaTime, scrollInput, lookInputVector);
 
-            // Handle toggling zoom level
-            if (Input.GetMouseButtonDown(1))
-            {
-                OrbitCamera.TargetDistance = (OrbitCamera.TargetDistance == 0f) ? OrbitCamera.DefaultDistance : 0f;
-            }
+
         }
 
         private void HandleCharacterInput()
