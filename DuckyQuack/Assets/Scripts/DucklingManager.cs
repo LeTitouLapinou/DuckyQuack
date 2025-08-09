@@ -32,7 +32,7 @@ public class DucklingManager : MonoBehaviour
 
     private void AddDucklingToList(SO_Duckling newDuckling)
     {
-        GameObject duckling = Instantiate(newDuckling.ducklingPrefab);
+        GameObject duckling = Instantiate(newDuckling.ducklingPrefab, transform);
         DucklingMovement ducklingMovement = duckling.AddComponent<DucklingMovement>();
 
         ducklingsList.Add(duckling);
