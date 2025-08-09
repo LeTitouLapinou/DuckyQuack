@@ -268,13 +268,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9503b30cb8e08b4da78aca6a8f9610b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.8
-  offsetX: 0
-  offsetY: 1
-  offsetZ: 0.75
+  spherePreview: {fileID: 0}
+  radius: 0.6
+  offsetX: 0.63
+  offsetY: 0.2
+  offsetZ: 0
   layermask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 512
 --- !u!1 &2938718143952910147
 GameObject:
   m_ObjectHideFlags: 0

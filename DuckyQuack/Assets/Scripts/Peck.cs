@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Peck : MonoBehaviour
 {
+    public GameObject spherePreview;
+
     public float radius;
 
     [Header("Offsets locaux")]
@@ -26,29 +28,28 @@ public class Peck : MonoBehaviour
         Gizmos.color = Color.red;
 
         Vector3 spherePos = transform.position
-                            + transform.right * offsetX
+                            + transform.forward * offsetX
                             + transform.up * offsetY
-                            + transform.forward * offsetZ;
+                            + transform.right * offsetZ;
         Gizmos.DrawSphere(spherePos, radius);
     }
 
     void Cast()
     {
         Vector3 origin = transform.position
-                         + transform.right * offsetX
+                         + transform.forward * offsetX
                          + transform.up * offsetY
-                         + transform.forward * offsetZ;
+                         + transform.right * offsetZ;
 
-        Vector3 direction = -transform.up; 
-        float maxDistance = radius * 2f;
+        Vector3 direction = transform.forward; 
+        float maxDistance = radius/2f;
 
-        if (Physics.SphereCast(origin, radius, direction, out hit, maxDistance, layermask))
+        Collider[] hitColliders = Physics.OverlapSphere(origin, radius, layermask);
+
+        foreach (Collider collider in hitColliders)
         {
-            Debug.Log("a cliqué sur " + hit.collider.name);
-        }
-        else
-        {
-            Debug.Log("SphereCast n'a rien touché");
+            Debug.Log(collider.name);
+            collider.gameObject.GetComponentInParent<IPeckable>()?.OnPeck();
         }
     }
 }

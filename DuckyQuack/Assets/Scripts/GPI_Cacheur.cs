@@ -3,7 +3,7 @@ using EditorAttributes;
 using UnityEngine;
 
 [ExecuteInEditMode]
-public class GPI_Cacheur : MonoBehaviour
+public class GPI_Cacheur : MonoBehaviour, IPeckable
 {
     [SerializeField, Required] private GameObject collectiblePrefab;
 
@@ -48,5 +48,10 @@ public class GPI_Cacheur : MonoBehaviour
     private void UpdateMesh()
     {
         meshFilter.mesh = mesh;
+    }
+
+    public void OnPeck()
+    {
+        StartCoroutineDuck();
     }
 }
