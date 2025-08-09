@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class Peck : MonoBehaviour, IPeckable
+public class Peck : MonoBehaviour
 {
     public float radius;
 
     [Header("Offsets locaux")]
-    public float offsetX;  
-    public float offsetY;  
-    public float offsetZ; 
+    public float offsetX;
+    public float offsetY;
+    public float offsetZ;
 
     public LayerMask layermask;
 
@@ -25,7 +25,6 @@ public class Peck : MonoBehaviour, IPeckable
     {
         Gizmos.color = Color.red;
 
-        // Position décalée dans les 3 axes locaux
         Vector3 spherePos = transform.position
                             + transform.right * offsetX
                             + transform.up * offsetY
@@ -39,12 +38,17 @@ public class Peck : MonoBehaviour, IPeckable
                          + transform.right * offsetX
                          + transform.up * offsetY
                          + transform.forward * offsetZ;
-        Vector3 direction = -transform.up;
 
-    }
+        Vector3 direction = -transform.up; 
+        float maxDistance = radius * 2f;
 
-    void IPeckable.OnPeck()
-    {
-        //tofill
+        if (Physics.SphereCast(origin, radius, direction, out hit, maxDistance, layermask))
+        {
+            Debug.Log("a cliqué sur " + hit.collider.name);
+        }
+        else
+        {
+            Debug.Log("SphereCast n'a rien touché");
+        }
     }
 }
