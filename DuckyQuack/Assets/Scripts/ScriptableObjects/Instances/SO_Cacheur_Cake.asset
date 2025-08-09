@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 809f78d16929212468315a04f5c54b80, type: 3}
-  m_Name: SO_Cacheur_01
+  m_Name: SO_Cacheur_Cake
   m_EditorClassIdentifier: 
-  mesh: {fileID: 0}
-  initialMaterial: {fileID: 0}
-  swappedMaterial: {fileID: 0}
-  ducklingNumber: 2
+  mesh: {fileID: -4242703898669362580, guid: 15afcc44b57965e46801b3466b6c906f, type: 3}
+  initialMaterial: {fileID: 2100000, guid: 5d4137983f9935644b4af99f4258178b, type: 2}
+  swappedMaterial: {fileID: 8107166122195158936, guid: 2ba7dfab41dd74542beccdaf228b628b, type: 3}
+  ducklingNumber: 5

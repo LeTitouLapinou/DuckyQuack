@@ -546,7 +546,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 5d4137983f9935644b4af99f4258178b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -575,7 +575,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986926183}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: -4242703898669362580, guid: 15afcc44b57965e46801b3466b6c906f, type: 3}
 --- !u!1 &1228548507
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +693,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1298089751}
+  - component: {fileID: 1298089752}
   m_Layer: 0
   m_Name: GPI_Cacheur
   m_TagString: Untagged
@@ -716,53 +717,24 @@ Transform:
   - {fileID: 986926184}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1480752876
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1480752877}
-  - component: {fileID: 1480752878}
-  m_Layer: 0
-  m_Name: DucklingManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1480752877
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480752876}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6080605, y: 0.86385727, z: -2.0439987}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1480752878
+--- !u!114 &1298089752
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480752876}
+  m_GameObject: {fileID: 1298089750}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50020186ccf8ef54990bbd45318afffe, type: 3}
+  m_Script: {fileID: 11500000, guid: a23d610210ad0af4fb4eb3ad75f99be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   eventManager: {fileID: 11400000, guid: 36adb628a07881a44813a461c51e8ea8, type: 2}
-  playerTransform: {fileID: 2063746196}
-  ducklingsList: []
+  mesh: {fileID: -5580221296373354048, guid: 3ce3301409116b84b98f22ef04da14dd, type: 3}
+  meshFilter: {fileID: 986926186}
+  meshRenderer: {fileID: 986926185}
+  initialMaterial: {fileID: 2100000, guid: 5d4137983f9935644b4af99f4258178b, type: 2}
+  swappedMaterial: {fileID: 8107166122195158936, guid: 1babb9effab776a45a6a8e43574493c9, type: 3}
 --- !u!1 &1921025876
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,11 +860,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea162ef65d2f902439c60fcd3df4e406, type: 3}
---- !u!4 &2063746196 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5533413108529389330, guid: 40de4183e9e8189499dd0a7ac7753d2e, type: 3}
-  m_PrefabInstance: {fileID: 8468818558649466744}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5858952454607643880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1032,6 +999,5 @@ SceneRoots:
   - {fileID: 743839185}
   - {fileID: 8468818558649466744}
   - {fileID: 1921025879}
-  - {fileID: 1480752877}
   - {fileID: 5858952454607643880}
   - {fileID: 1298089751}
