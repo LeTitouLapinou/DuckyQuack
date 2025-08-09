@@ -271,7 +271,8 @@ Animation:
   m_Enabled: 1
   serializedVersion: 4
   m_Animation: {fileID: 7400000, guid: c74aa7f5d1f3483438da606cbf66262f, type: 2}
-  m_Animations: []
+  m_Animations:
+  - {fileID: 7400000, guid: c74aa7f5d1f3483438da606cbf66262f, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -289,7 +290,7 @@ GameObject:
   - component: {fileID: 1610688613569568739}
   - component: {fileID: 5722825971370975567}
   - component: {fileID: 1584583386792189833}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DucklingCollectible
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4173940203277777250}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Meshes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 132402728208547369}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,7 +456,7 @@ GameObject:
   - component: {fileID: 1971581431631396925}
   - component: {fileID: 7833964672091313420}
   - component: {fileID: 1073052505813070552}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
