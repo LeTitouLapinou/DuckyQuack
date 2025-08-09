@@ -8,12 +8,12 @@ public class Elevator : MonoBehaviour
 
     private bool goingUp = false;
 
-    private bool duckOnElevator = false;
+    public bool duckOnElevator = false;
 
     void Update()
     {
-        //if (duckOnElevator) 
-        //{ 
+        if (duckOnElevator) 
+        { 
             // Au clic gauche, on inverse la direction
             if (Input.GetMouseButtonDown(0))
             {
@@ -49,8 +49,18 @@ public class Elevator : MonoBehaviour
                     }
                 }
             }
-        //}
+        }
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        duckOnElevator = true;
     }
 
-    
+
+    private void OnTriggerExit(Collider other)
+    {
+       duckOnElevator = false;
+    }
+
 }
