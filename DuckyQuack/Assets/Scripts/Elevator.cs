@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Elevator : MonoBehaviour
 {
     public float speed = 3f;
@@ -9,22 +10,36 @@ public class Elevator : MonoBehaviour
     private bool isGoingUp = false;
     public bool duckOnElevator = false;
 
+    private AudioSource audioSource;
+    private bool isMoving = false;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.loop = true; // pour que le son continue tant que l'ascenseur bouge
+        audioSource.playOnAwake = false;
+    }
+
     void Update()
     {
+        bool wasMoving = isMoving;
+        isMoving = false; // on réinitialise à chaque frame
+
         if (duckOnElevator)
         {
-            // Si on est sur l'ascenseur et clic gauche, on monte
+            // Clic gauche => monte
             if (Input.GetMouseButtonDown(0))
             {
                 isGoingUp = true;
             }
 
-            // Si on est sur l'ascenseur et on monte
             if (isGoingUp)
             {
                 if (transform.position.y < maxHeight)
                 {
                     transform.Translate(Vector3.up * speed * Time.deltaTime);
+                    isMoving = true;
+
                     if (transform.position.y > maxHeight)
                     {
                         Vector3 pos = transform.position;
@@ -33,18 +48,15 @@ public class Elevator : MonoBehaviour
                     }
                 }
             }
-            else
-            {
-                // Si on est sur l'ascenseur mais on ne monte pas, on reste immobile
-                // (ne rien faire)
-            }
         }
         else
         {
-            // Si on n'est pas sur l'ascenseur, on descend automatiquement
+            // Descente automatique
             if (transform.position.y > minHeight)
             {
                 transform.Translate(Vector3.down * speed * Time.deltaTime);
+                isMoving = true;
+
                 if (transform.position.y < minHeight)
                 {
                     Vector3 pos = transform.position;
@@ -53,8 +65,17 @@ public class Elevator : MonoBehaviour
                 }
             }
 
-            // Une fois en bas, on arrête la montée
             isGoingUp = false;
+        }
+
+        // Gestion du son en fonction du mouvement
+        if (isMoving && !audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
+        else if (!isMoving && audioSource.isPlaying)
+        {
+            audioSource.Stop();
         }
     }
 }
