@@ -27106,8 +27106,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4900896b61c01a941a3aba071cab74c5, type: 2}
+  m_sharedMaterial: {fileID: -8149273050578377349, guid: 4900896b61c01a941a3aba071cab74c5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -52926,7 +52926,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 8d6c42bf186ee76488c2b2d0a0ed9fe3, type: 3}
   m_Resource: {fileID: 8300000, guid: 8d6c42bf186ee76488c2b2d0a0ed9fe3, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 0.01
   m_Pitch: 1
   Loop: 0
   Mute: 0

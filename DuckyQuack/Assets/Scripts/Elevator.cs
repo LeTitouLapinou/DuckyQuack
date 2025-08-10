@@ -16,9 +16,14 @@ public class Elevator : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        audioSource.loop = true; // pour que le son continue tant que l'ascenseur bouge
+        audioSource.loop = true;
         audioSource.playOnAwake = false;
+
+        Vector3 pos = transform.position;
+        pos.y = minHeight;
+        transform.position = pos;
     }
+
 
     void Update()
     {
