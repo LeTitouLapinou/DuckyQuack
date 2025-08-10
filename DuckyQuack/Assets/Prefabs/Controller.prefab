@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 1353184608006811567}
   - component: {fileID: 2311036694998583803}
   - component: {fileID: 6400127397900082232}
+  - component: {fileID: 2280380115449333035}
   m_Layer: 6
   m_Name: Duck
   m_TagString: Untagged
@@ -257,6 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23bdcfb605eabb64095f76ffb25559c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventManager: {fileID: 11400000, guid: 36adb628a07881a44813a461c51e8ea8, type: 2}
   quackSound: {fileID: 8300000, guid: 8bd2b21637775e846bc537f79e5f225d, type: 3}
 --- !u!114 &2311036694998583803
 MonoBehaviour:
@@ -300,6 +302,14 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!81 &2280380115449333035
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2429120949438729779}
+  m_Enabled: 1
 --- !u!1 &2938718143952910147
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,7 +558,6 @@ GameObject:
   - component: {fileID: 3143581153528894566}
   - component: {fileID: 8880189328457336257}
   - component: {fileID: 3896549625989411197}
-  - component: {fileID: 8020708547350729672}
   - component: {fileID: 1108367329582035710}
   - component: {fileID: 6163164204980336027}
   m_Layer: 0
@@ -626,14 +635,6 @@ Camera:
   m_StereoSeparation: 0.022
 --- !u!124 &3896549625989411197
 Behaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8956459685025060605}
-  m_Enabled: 1
---- !u!81 &8020708547350729672
-AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}

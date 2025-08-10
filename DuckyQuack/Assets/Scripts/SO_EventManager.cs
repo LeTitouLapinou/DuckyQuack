@@ -6,4 +6,6 @@ public class SO_EventManager : ScriptableObject
 {
     public UnityEvent<SO_Duckling> DucklingPickedUp;
     public UnityEvent DispatchDucklingPickup;
+
+    public UnityEvent DuckQuacked;
 }
