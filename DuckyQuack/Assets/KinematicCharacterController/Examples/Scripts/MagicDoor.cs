@@ -1,27 +1,29 @@
 using System;
+using System.Collections;
 using EditorAttributes;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
 public class MagicDoor : MonoBehaviour
 {
-    [SerializeField] private TextMeshPro counterText;
-    [SerializeField] private TextMeshPro goalText;
-
+    [Title("Value to change")]
     [SerializeField] private int goal;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [Button("Update Text", 30)]
+    private void UpdateGoal()
     {
-
+        goalText.text = goal.ToString();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Space(20)]
+    [SerializeField] private TextMeshPro counterText;
+    [SerializeField] private TextMeshPro goalText;
+    [SerializeField] private Animation doorHingeAnim;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Sprite panelGoodSprite;
+    private bool doorClosed = true;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -35,15 +37,18 @@ public class MagicDoor : MonoBehaviour
 
     private void OnDuckEnter(int ducklingsCount)
     {
-        if (ducklingsCount == goal)
-        {
-            OpenDoor();
+        if (ducklingsCount >= goal && doorClosed)
+        { 
+            StartCoroutine("OpenDoor");
         }
     }
 
-    private void OpenDoor()
+    IEnumerator OpenDoor()
     {
-        throw new NotImplementedException();
+        doorClosed = false;
+        spriteRenderer.sprite = panelGoodSprite;
+        yield return new WaitForSeconds(.5f);
+        doorHingeAnim.Play();
     }
 
     private void OnTriggerExit(Collider other)
@@ -51,9 +56,5 @@ public class MagicDoor : MonoBehaviour
         counterText.text = "0";
     }
 
-    [Button("Update Text")]
-    private void UpdateGoal()
-    {
-        goalText.text = goal.ToString();
-    }
+
 }
