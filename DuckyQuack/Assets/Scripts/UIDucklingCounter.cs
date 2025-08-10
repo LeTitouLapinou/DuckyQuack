@@ -17,6 +17,12 @@ public class UIDucklingCounter : MonoBehaviour
     {
         // Récupérer le total des ducklings présents au lancement
         totalCount = FindObjectsByType<DucklingCollectible>(FindObjectsSortMode.None).Length;
+        
+        foreach (GPI_Cacheur cacheur in FindObjectsByType<GPI_Cacheur>(FindObjectsSortMode.None))
+        {
+            totalCount += cacheur.ducklingNumber;
+        }
+
         UpdateUI();
     }
 
