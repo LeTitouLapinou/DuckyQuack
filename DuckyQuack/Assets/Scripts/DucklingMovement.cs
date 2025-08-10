@@ -4,7 +4,7 @@ public class DucklingMovement : MonoBehaviour
 {
     public Transform follow;
 
-    public float maxDistance = 1f;
+    public float maxDistance = 1.5f;
 
     public float speed = 10f;
 
