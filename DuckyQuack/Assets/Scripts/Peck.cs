@@ -3,7 +3,7 @@ using UnityEngine;
 public class Peck : MonoBehaviour
 {
 
-    [SerializeField] private Animator animator;
+    public Animator animator;
     public GameObject spherePreview;
 
     public float radius;
@@ -21,7 +21,6 @@ public class Peck : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)) // Clic gauche
         {
-            animator.SetTrigger("Peck");
             Cast();
         }
     }
@@ -39,7 +38,7 @@ public class Peck : MonoBehaviour
 
     void Cast()
     {
-
+        animator.SetTrigger("PeckTrigger");
         Vector3 origin = transform.position
                          + transform.forward * offsetX
                          + transform.up * offsetY
