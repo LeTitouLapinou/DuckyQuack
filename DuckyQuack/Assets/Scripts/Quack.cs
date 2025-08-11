@@ -5,8 +5,11 @@ public class Quack : MonoBehaviour
 {
     [SerializeField, Required] SO_EventManager eventManager;
 
-    public AudioClip quackSound;
+    public AudioClip[] quackSound;
     private AudioSource audioSource;
+
+    [SerializeField] private ParticleSystem peckParticles;
+    [SerializeField] private GameObject cameraGO;
 
     void Start()
     {
@@ -23,8 +26,12 @@ public class Quack : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))  // 1 = clic droit
         {
-            audioSource.PlayOneShot(quackSound);
+            peckParticles.Stop();
+            audioSource.PlayOneShot(quackSound[Random.Range(0, quackSound.Length)]);
             eventManager.DuckQuacked.Invoke();
+
+            peckParticles.Play();
         }
+        peckParticles.gameObject.transform.rotation = cameraGO.transform.rotation * Quaternion.Euler(0, 180f, 0);
     }
 }

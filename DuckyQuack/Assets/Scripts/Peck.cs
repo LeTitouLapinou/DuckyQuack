@@ -1,10 +1,12 @@
+using System;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Peck : MonoBehaviour
 {
-
+    public AudioClip[] peckSound;
     public Animator animator;
-    public GameObject spherePreview;
+
 
     public float radius;
 
@@ -17,12 +19,32 @@ public class Peck : MonoBehaviour
 
     RaycastHit hit;
 
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = gameObject.GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        audioSource.playOnAwake = false;
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) // Clic gauche
         {
             Cast();
+            PlaySound();
+
         }
+    }
+
+    public void PlaySound()
+    {
+        audioSource.PlayOneShot(peckSound[UnityEngine.Random.Range(0, peckSound.Length)]);
     }
 
     private void OnDrawGizmos()
