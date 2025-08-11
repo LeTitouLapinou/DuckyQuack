@@ -1,3 +1,4 @@
+using KinematicCharacterController.Examples;
 using UnityEngine;
 
 public class Bumper : MonoBehaviour
@@ -6,8 +7,6 @@ public class Bumper : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Rigidbody rb = other.GetComponent<Rigidbody>();
-        Debug.Log(rb);
-        rb.AddForce(Vector3.up * bounceForce, ForceMode.Impulse);
+        other.gameObject.GetComponent<ExampleCharacterController>()?.AddVelocity(Vector3.up *  bounceForce);
     }
 }
