@@ -11,8 +11,9 @@ public class GPI_Cacheur : MonoBehaviour, IPeckable
 
     //[SerializeField, Required] private SO_EventManager eventManager;
 
-    [FoldoutGroup("References", nameof(collectiblePrefab), nameof(meshFilter), nameof(meshRenderer), nameof(meshCollider), nameof(initialMaterial), nameof(swappedMaterial))]
+    [FoldoutGroup("References",nameof(particleSys), nameof(collectiblePrefab), nameof(meshFilter), nameof(meshRenderer), nameof(meshCollider), nameof(initialMaterial), nameof(swappedMaterial))]
     [SerializeField] private Void groupHolder;
+    [SerializeField, HideProperty] private ParticleSystem particleSys;
     [SerializeField, HideProperty] private GameObject collectiblePrefab;
     [SerializeField, HideProperty] private MeshFilter meshFilter;
     [SerializeField, HideProperty] private MeshRenderer meshRenderer;
@@ -34,6 +35,8 @@ public class GPI_Cacheur : MonoBehaviour, IPeckable
         canBePicked = false;
         StartCoroutine("SpawnDucklings");
         meshRenderer.material = swappedMaterial;
+        particleSys.Pause();
+        particleSys.Clear();
     }
 
     IEnumerator SpawnDucklings()

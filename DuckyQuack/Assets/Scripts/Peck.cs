@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Peck : MonoBehaviour
 {
+
+    public Animator animator;
     public GameObject spherePreview;
 
     public float radius;
@@ -36,6 +38,7 @@ public class Peck : MonoBehaviour
 
     void Cast()
     {
+        animator.SetTrigger("PeckTrigger");
         Vector3 origin = transform.position
                          + transform.forward * offsetX
                          + transform.up * offsetY
