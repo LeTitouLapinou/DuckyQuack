@@ -34,7 +34,7 @@ public class Peck : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Clic gauche
+        if (Input.GetMouseButtonDown(1)) // Clic droit
         {
             Cast();
             PlaySound();

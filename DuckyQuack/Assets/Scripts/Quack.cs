@@ -24,7 +24,7 @@ public class Quack : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))  // 1 = clic droit
+        if (Input.GetMouseButtonDown(0))  // 0 = clic gauche
         {
             peckParticles.Stop();
             audioSource.PlayOneShot(quackSound[Random.Range(0, quackSound.Length)]);
