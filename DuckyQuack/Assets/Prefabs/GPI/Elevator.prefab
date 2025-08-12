@@ -48,9 +48,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  minHeight: 0
+  minHeight: 0.276
   maxHeight: 5
   duckOnElevator: 0
+  lid: {fileID: 8481876734393360465}
 --- !u!82 &6192722305521185151
 AudioSource:
   m_ObjectHideFlags: 0
@@ -243,8 +244,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.00000008146034, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5460048607420143387}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -334,7 +335,7 @@ GameObject:
   - component: {fileID: 750911171612914973}
   - component: {fileID: 3557518113049530802}
   - component: {fileID: 5100195041641183558}
-  - component: {fileID: 656688500316933734}
+  - component: {fileID: 4772783350864728317}
   m_Layer: 0
   m_Name: Lid
   m_TagString: Untagged
@@ -351,9 +352,9 @@ Transform:
   m_GameObject: {fileID: 8481876734393360465}
   serializedVersion: 2
   m_LocalRotation: {x: 0.00000008146034, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.19, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0.276, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4118824763371729585}
   m_Father: {fileID: 5460048607420143387}
@@ -411,8 +412,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &656688500316933734
-MeshCollider:
+--- !u!65 &4772783350864728317
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -429,7 +430,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7699666271181864620, guid: 9e75e9b87856c39449e644e0b5a1af8f, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.52, y: 0.06, z: 0.49}
+  m_Center: {x: 0, y: 0.05, z: 0}

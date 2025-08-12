@@ -10,6 +10,8 @@ public class Elevator : MonoBehaviour
     private bool isGoingUp = false;
     public bool duckOnElevator = false;
 
+    [SerializeField] private GameObject lid;
+
     private AudioSource audioSource;
     private bool isMoving = false;
 
@@ -19,9 +21,9 @@ public class Elevator : MonoBehaviour
         audioSource.loop = true;
         audioSource.playOnAwake = false;
 
-        Vector3 pos = transform.position;
+        Vector3 pos = lid.transform.position;
         pos.y = minHeight;
-        transform.position = pos;
+        lid.transform.position = pos;
     }
 
 
@@ -40,16 +42,16 @@ public class Elevator : MonoBehaviour
 
             if (isGoingUp)
             {
-                if (transform.position.y < maxHeight)
+                if (lid.transform.position.y < maxHeight)
                 {
-                    transform.Translate(Vector3.up * speed * Time.deltaTime);
+                    lid.transform.Translate(Vector3.up * speed * Time.deltaTime);
                     isMoving = true;
 
-                    if (transform.position.y > maxHeight)
+                    if (lid.transform.position.y > maxHeight)
                     {
-                        Vector3 pos = transform.position;
+                        Vector3 pos = lid.transform.position;
                         pos.y = maxHeight;
-                        transform.position = pos;
+                        lid.transform.position = pos;
                     }
                 }
             }
@@ -57,16 +59,16 @@ public class Elevator : MonoBehaviour
         else
         {
             // Descente automatique
-            if (transform.position.y > minHeight)
+            if (lid.transform.position.y > minHeight)
             {
-                transform.Translate(Vector3.down * speed * Time.deltaTime);
+                lid.transform.Translate(Vector3.down * speed * Time.deltaTime);
                 isMoving = true;
 
-                if (transform.position.y < minHeight)
+                if (lid.transform.position.y < minHeight)
                 {
-                    Vector3 pos = transform.position;
+                    Vector3 pos = lid.transform.position;
                     pos.y = minHeight;
-                    transform.position = pos;
+                    lid.transform.position = pos;
                 }
             }
 
