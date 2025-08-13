@@ -1,13 +1,17 @@
 using System.Collections;
 using EditorAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 
 [ExecuteInEditMode]
 public class GPI_Cacheur : MonoBehaviour, IPeckable
 {
+    public UnityEvent ePecked;
 
     [SerializeField, Required] private Mesh mesh;
     public int ducklingNumber;
+
+    private GameObject playerRef;
 
     //[SerializeField, Required] private SO_EventManager eventManager;
 
@@ -34,9 +38,6 @@ public class GPI_Cacheur : MonoBehaviour, IPeckable
     {
         canBePicked = false;
         StartCoroutine("SpawnDucklings");
-        meshRenderer.material = swappedMaterial;
-        particleSys.Pause();
-        particleSys.Clear();
     }
 
     IEnumerator SpawnDucklings()
@@ -59,9 +60,20 @@ public class GPI_Cacheur : MonoBehaviour, IPeckable
         meshCollider.sharedMesh = mesh;
     }
 
-    public void OnPeck()
+    public void OnPeck(GameObject sender)
     {
         if (canBePicked)
+        {
             StartCoroutineDuck();
+            playerRef = sender;
+            ePecked.Invoke();
+        }
+    }
+
+    public void RoastTheDuck(GameObject roastedDuckPrefab)
+    {
+        Instantiate(roastedDuckPrefab, playerRef.transform.position, Quaternion.identity);
+        playerRef.gameObject.SetActive(false);
+        
     }
 }

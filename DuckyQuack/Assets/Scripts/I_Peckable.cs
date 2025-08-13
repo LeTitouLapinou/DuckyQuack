@@ -2,5 +2,5 @@ using UnityEngine;
 
 public interface IPeckable
 {
-    void OnPeck();
+    void OnPeck(GameObject sender);
 }
