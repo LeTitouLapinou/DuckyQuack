@@ -74,7 +74,7 @@ public class Peck : MonoBehaviour
         foreach (Collider collider in hitColliders)
         {
             Debug.Log(collider.name);
-            collider.gameObject.GetComponentInParent<IPeckable>()?.OnPeck();
+            collider.gameObject.GetComponentInParent<IPeckable>()?.OnPeck(this.gameObject);
         }
     }
 }
