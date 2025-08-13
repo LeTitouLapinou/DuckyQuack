@@ -35,7 +35,7 @@ public class Elevator : MonoBehaviour
         if (duckOnElevator)
         {
             // Clic gauche => monte
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(1))
             {
                 isGoingUp = true;
             }
