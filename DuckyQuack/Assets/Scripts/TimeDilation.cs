@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class TimeDilation : MonoBehaviour
@@ -16,5 +17,17 @@ public class TimeDilation : MonoBehaviour
     {
         Time.fixedDeltaTime *= slowMotionTimeScale;
         Time.timeScale = slowMotionTimeScale;
+        StartCoroutine("RemoveSlowMo");
+    }
+    public void StopSlowMotion()
+    {
+        Time.timeScale = startTimeScale;
+        Time.fixedDeltaTime = startFixedDeltaTime;
+    }
+
+    IEnumerator RemoveSlowMo()
+    {
+        yield return new WaitForSeconds(1);
+        StopSlowMotion();
     }
 }
