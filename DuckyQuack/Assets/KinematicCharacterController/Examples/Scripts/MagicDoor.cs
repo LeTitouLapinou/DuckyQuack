@@ -25,6 +25,10 @@ public class MagicDoor : MonoBehaviour
     [SerializeField] private Sprite panelGoodSprite;
     private bool doorClosed = true;
 
+    private void Start()
+    {
+        UpdateGoal();
+    }
     private void OnTriggerEnter(Collider other)
     {
         DucklingManager ducklingManager = other.gameObject.transform.parent.GetComponentInChildren<DucklingManager>();
