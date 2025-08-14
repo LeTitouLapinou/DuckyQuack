@@ -45619,6 +45619,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7067258108029208428, guid: dc6773b02508d1d4f8bae993b22a82f0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 8181723350453580507, guid: dc6773b02508d1d4f8bae993b22a82f0, type: 3}
       propertyPath: m_Name
       value: MagicDoor

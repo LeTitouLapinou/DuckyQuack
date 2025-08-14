@@ -2,6 +2,7 @@ using System.Collections;
 using EditorAttributes;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DucklingCollectible : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class DucklingCollectible : MonoBehaviour
     private void Start()
     {
         StartCoroutine("EnablePickup");
+
     }
 
     public void OnPickup()

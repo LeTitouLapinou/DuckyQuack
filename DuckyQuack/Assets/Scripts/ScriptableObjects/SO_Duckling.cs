@@ -4,4 +4,5 @@ using UnityEngine;
 public class SO_Duckling : ScriptableObject
 {
     public GameObject ducklingPrefab;
+    public AudioClip ducklingClip;
 }
