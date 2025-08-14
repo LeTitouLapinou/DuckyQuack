@@ -15,7 +15,6 @@ public class DucklingCollectible : MonoBehaviour
         StartCoroutine("EnablePickup");
     }
 
-    [Button("Add duckling")]
     public void OnPickup()
     {
         eventManager.DucklingPickedUp.Invoke(SO_duckling);
