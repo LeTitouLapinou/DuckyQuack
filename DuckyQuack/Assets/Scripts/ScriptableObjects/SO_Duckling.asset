@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: SO_Duckling
   m_EditorClassIdentifier: 
   ducklingPrefab: {fileID: 8608433592581427814, guid: b2a125281806f3e4795ffc25f53e92c8, type: 3}
-  ducklingClip: {fileID: 8300000, guid: 25548f8dced3a5647a6cdf69e687ea58, type: 3}
+  ducklingAudioClips:
+  - {fileID: 8300000, guid: 05697ab713e439545808ae759ab4998d, type: 3}
+  - {fileID: 8300000, guid: 934b4ea690cbc7e44ace2035b8e4e15a, type: 3}
+  - {fileID: 8300000, guid: c6d80144b4e8b8d4182e34e289e23371, type: 3}
+  - {fileID: 8300000, guid: de899a73092f5de4a93619c96fb4c5e2, type: 3}

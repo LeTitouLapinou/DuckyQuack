@@ -65,7 +65,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 4967543496241263149}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Stop
+        m_MethodName: Clear
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
